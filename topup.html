@@ -11,7 +11,22 @@
 body{background:#f5f7fa;color:#222;}
 .container{max-width:650px;margin:0 auto;padding:20px 15px;}
 
-/* 🔥 PRO OFFER BOX - SITE THEME EKATA GALAPENA */
+/* 🔥 ADMIN BUTTON - UDA DEKKEN */
+.admin-btn{position:fixed;top:15px;right:15px;background:linear-gradient(90deg, #ff6b00, #ff8a00);color:#fff;border:none;padding:10px 18px;border-radius:25px;font-weight:700;font-size:13px;cursor:pointer;z-index:9999;box-shadow:0 4px 15px rgba(255,107,0,0.3);}
+.admin-btn:hover{transform:scale(1.05);}
+
+/* ADMIN PANEL POPUP */
+.admin-modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.8);z-index:10000;justify-content:center;align-items:center;padding:20px;}
+.admin-modal.active{display:flex;}
+.admin-box{background:#fff;width:100%;max-width:500px;border-radius:20px;padding:25px;max-height:90vh;overflow-y:auto;}
+.admin-box h2{color:#ff6b00;margin-bottom:15px;text-align:center;}
+.admin-login input{width:100%;padding:14px;margin:10px 0;border:2px solid #e0e0e0;border-radius:12px;font-size:15px;}
+.admin-login button{width:100%;padding:14px;background:linear-gradient(90deg, #ff6b00, #ff8a00);border:none;border-radius:12px;color:#fff;font-weight:700;font-size:15px;cursor:pointer;margin-top:10px;}
+.admin-item{display:flex;justify-content:space-between;align-items:center;background:#f5f7fa;padding:12px;border-radius:10px;margin:8px 0;}
+.admin-item input{width:100px;padding:8px;border:1px solid #ddd;border-radius:8px;}
+.admin-item button{padding:8px 15px;background:#3fb950;color:#fff;border:none;border-radius:8px;font-weight:700;cursor:pointer;}
+.close-admin{float:right;background:#ff4444;color:#fff;border:none;padding:5px 12px;border-radius:8px;cursor:pointer;}
+
 .offer-box{background:#fff;border-radius:20px;padding:18px;margin-bottom:25px;border:2px solid #ff6b00;box-shadow:0 4px 20px rgba(255,107,0,0.12);position:relative;overflow:hidden;}
 .offer-box::after{content:"";position:absolute;top:0;left:0;width:100%;height:4px;background:linear-gradient(90deg, #ff6b00, #ff8a00);}
 .offer-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;}
@@ -24,9 +39,7 @@ body{background:#f5f7fa;color:#222;}
 .time-item{background:#f5f7fa;border:1px solid #e0e0e0;border-radius:12px;padding:10px;text-align:center;}
 .time-num{font-size:20px;font-weight:800;color:#ff6b00;display:block;}
 .time-label{font-size:10px;color:#777;font-weight:600;margin-top:2px;}
-.time-sep{color:#ff6b00;font-weight:800;}
 
-/* STEP 1 - VERIFY BOX */
 .verify-box{background:#fff;border-radius:20px;padding:20px;margin-bottom:25px;border:1px solid #e0e0e0;box-shadow:0 2px 10px rgba(0,0,0,0.05);}
 .step-title{display:flex;align-items:center;gap:10px;font-size:16px;font-weight:700;margin-bottom:15px;color:#222;}
 .step-number{width:28px;height:28px;background:#ff6b00;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:800;color:#fff;}
@@ -37,16 +50,14 @@ body{background:#f5f7fa;color:#222;}
 .verify-btn:hover{transform:scale(1.02);}
 .verify-btn:disabled{background:#ccc;cursor:not-allowed;}
 
-/* VERIFIED BOX */
 .verified-box{background:#e8f5e9;border:2px solid #3fb950;border-radius:20px;padding:18px;margin-bottom:25px;display:none;}
 .verified-header{display:flex;align-items:center;gap:12px;margin-bottom:12px;}
-.verified-header .tick{width:32px;height:32px;background:#3fb950;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:800;color:#fff;}
+.verified-header.tick{width:32px;height:32px;background:#3fb950;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:800;color:#fff;}
 .player-name{font-size:18px;font-weight:800;color:#2e7d32;}
 .player-uid{font-size:13px;color:#555;}
 #ffNameInput{width:100%;padding:12px;background:#fff;border:2px solid #3fb950;border-radius:10px;color:#222;font-size:14px;margin-top:8px;outline:none;}
 .change-id{margin-top:10px;background:#fff;border:1px solid #3fb950;padding:8px 15px;border-radius:8px;color:#2e7d32;cursor:pointer;font-size:13px;font-weight:600;}
 
-/* PACKAGES - 2 COLUMN GRID */
 .package-section{margin-bottom:30px;}
 .package-title{font-size:20px;font-weight:700;margin-bottom:18px;color:#222;border-left:4px solid #ff6b00;padding-left:12px;}
 .grid{display:grid;grid-template-columns: repeat(2, 1fr);gap:15px;}
@@ -58,12 +69,10 @@ body{background:#f5f7fa;color:#222;}
 .price{font-size:16px;font-weight:800;color:#ff6b00;margin-bottom:10px;}
 .price span{font-size:11px;color:#777;font-weight:600;margin-left:2px;}
 
-/* + - BUTTONS */
 .qty-control{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;}
 .qty-btn{width:30px;height:30px;background:#f5f7fa;border:1px solid #ddd;border-radius:8px;color:#222;font-size:18px;font-weight:700;cursor:pointer;}
 .qty{font-weight:700;font-size:15px;min-width:20px;text-align:center;color:#222;}
 
-/* CART BAR */
 .cart-bar{position:fixed;bottom:15px;left:50%;transform:translateX(-50%);background:#fff;padding:12px 20px;border-radius:50px;display:none;align-items:center;gap:15px;border:2px solid #ff6b00;box-shadow:0 5px 20px rgba(255,107,0,0.2);z-index:999;width:90%;max-width:500px;}
 .cart-bar.active{display:flex;}
 .cart-info{flex:1;font-size:14px;color:#222;}
@@ -73,9 +82,36 @@ body{background:#f5f7fa;color:#222;}
 .page-title{text-align:center;margin-bottom:25px;padding-top:10px;}
 .page-title h1{font-size:28px;font-weight:800;color:#ff6b00;}
 .page-title p{color:#777;font-size:13px;margin-top:6px}
+
+/* TOAST MESSAGE */
+.toast{position:fixed;top:20px;left:50%;transform:translateX(-50%);background:#3fb950;color:#fff;padding:12px 20px;border-radius:10px;font-weight:700;display:none;z-index:10001;}
+.toast.show{display:block;animation:fadeInOut 2s;}
+@keyframes fadeInOut{0%{opacity:0} 20%{opacity:1} 80%{opacity:1} 100%{opacity:0}}
 </style>
 </head>
 <body>
+
+<!-- ADMIN BUTTON -->
+<button class="admin-btn" onclick="openAdmin()">⚙️ ADMIN</button>
+
+<!-- ADMIN PANEL POPUP -->
+<div class="admin-modal" id="adminModal">
+  <div class="admin-box">
+    <button class="close-admin" onclick="closeAdmin()">X</button>
+    <h2>🔒 Admin Panel</h2>
+    <div id="adminLogin" class="admin-login">
+      <input type="password" id="adminPw" placeholder="Enter Admin Password">
+      <button onclick="loginAdmin()">LOGIN</button>
+    </div>
+    <div id="adminPanel" style="display:none;">
+      <h3 style="color:#3fb950;margin-bottom:10px;">✅ Active - Price Edit</h3>
+      <div id="adminPriceList"></div>
+    </div>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast">Price Updated Successfully!</div>
 
 <div class="container">
 
@@ -97,18 +133,9 @@ body{background:#f5f7fa;color:#222;}
     <div class="offer-badge">20% OFF</div>
   </div>
   <div class="countdown">
-    <div class="time-item">
-      <span class="time-num" id="hours">24</span>
-      <span class="time-label">HOURS</span>
-    </div>
-    <div class="time-item">
-      <span class="time-num" id="minutes">00</span>
-      <span class="time-label">MINUTES</span>
-    </div>
-    <div class="time-item">
-      <span class="time-num" id="seconds">00</span>
-      <span class="time-label">SECONDS</span>
-    </div>
+    <div class="time-item"><span class="time-num" id="hours">24</span><span class="time-label">HOURS</span></div>
+    <div class="time-item"><span class="time-num" id="minutes">00</span><span class="time-label">MINUTES</span></div>
+    <div class="time-item"><span class="time-num" id="seconds">00</span><span class="time-label">SECONDS</span></div>
   </div>
 </div>
 
@@ -144,82 +171,80 @@ body{background:#f5f7fa;color:#222;}
 
 <!-- CART BAR -->
 <div class="cart-bar" id="cartBar">
-<div class="cart-info">
-Items: <span id="cartCount">0</span> | Total: <span class="cart-total" id="cartTotal">Rs. 0</span>
-</div>
+<div class="cart-info">Items: <span id="cartCount">0</span> | Total: <span class="cart-total" id="cartTotal">Rs. 0</span></div>
 <button class="checkout-btn" onclick="goToCheckout()">NEXT →</button>
 </div>
 
+<!-- FIREBASE SDK -->
+<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-analytics-compat.js"></script>
+
 <script>
+// FIREBASE CONFIG
+const firebaseConfig = {
+  apiKey: "AIzaSyCAp_X7c6OTwQJ79VLo5dn15kGUDo4FKXQ",
+  authDomain: "yasitopup-3a648.firebaseapp.com",
+  databaseURL: "https://yasitopup-3a648-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId: "yasitopup-3a648",
+  storageBucket: "yasitopup-3a648.firebasestorage.app",
+  messagingSenderId: "708531417030",
+  appId: "1:708531417030:web:650ec9f7e9520f8bd24cc7",
+  measurementId: "G-C25VLDZG6X"
+};
+
+firebase.initializeApp(firebaseConfig);
+firebase.analytics();
+const db = firebase.database();
 
 let cart = [];
 let verified = false;
+let packagesData = [];
+let totalSeconds = 48 * 60 * 60;
 
-// 🔥 TIMER SET KARANNA MEKEN - 24 HOURS
-let totalSeconds = 48 * 60 * 60; // 24 hours. 48 karanna nam 48 * 60 * 60
-
-const packagesData = [
-  {
-    title:"MEMBERSHIP",
-    items:[
-      ["WEEKLY LITE MEMBERSHIP",150,"IMG_3090.png"],
-      ["WEEKLY MEMBERSHIP",595,"IMG_3092.png"],
-      ["MONTHLY MEMBERSHIP",2780,"IMG_3091.png"],
-      ["VIP MEMBERSHIP",3375,"IMG_3094.webp"],
-      ["VIP MAX MEMBERSHIP",10125,"IMG_3094.webp"],
-      ["S VIP MEMBERSHIP",5160,"IMG_3094.webp"],
-      ["S VIP PLUS MEMBERSHIP",5770,"IMG_3094.webp"]
-    ]
-  },
-  {
-    title:"DIAMOND PACK",
-    items:[
-      ["25 💎",150,"IMG_3089.webp"],
-      ["50 💎",300,"IMG_3089.webp"],
-      ["100 💎",350,"IMG_3089.webp"],
-      ["310 💎",960,"IMG_3089.webp"],
-      ["520 💎",1730,"IMG_3089.webp"],
-      ["1060 💎",3510,"IMG_3089.webp"],
-      ["2180 💎",6590,"IMG_3089.webp"],
-      ["5600 💎",17060,"IMG_3089.webp"],
-      ["11500 💎",34090,"IMG_3089.webp"],
-      ["23000 💎",68180,"IMG_3089.webp"],
-      ["46000 💎",136360,"IMG_3089.webp"]
-    ]
-  },
-  {
-    title:"LEVEL UP PASS PACKAGE",
-    items:[
-      ["LEVEL 6",150,"IMG_3101.jpeg"],
-      ["LEVEL 10",260,"IMG_3101.jpeg"],
-      ["LEVEL 15",260,"IMG_3101.jpeg"],
-      ["LEVEL 20",260,"IMG_3101.jpeg"],
-      ["LEVEL 25",260,"IMG_3101.jpeg"],
-      ["LEVEL 30",400,"IMG_3101.jpeg"]
-    ]
-  },
-  {
-    title:"EVO ACCESS PACKAGE",
-    items:[
-      ["EVO ACCESS — 3 DAY",225,"IMG_3100.webp"],
-      ["EVO ACCESS — 7 DAY",295,"IMG_3100.webp"],
-      ["EVO ACCESS — 30 DAY",870,"IMG_3100.webp"]
-    ]
-  }
-];
+// ADMIN PASSWORD
+const ADMIN_PASSWORD = "Yasiya295@";
 
 window.onload = function(){
-loadPackages();
+loadPricesFromFirebase();
 startCountdown();
 }
+
+// FIREBASE IDEN PRICE LOAD KARANNA
+function loadPricesFromFirebase(){
+db.ref('prices').once('value').then(snapshot => {
+  const data = snapshot.val();
+  if(data){
+    packagesData = data;
+  } else {
+    // Pahala default data eka. Pahala database eke na nam meka save wei
+    packagesData = [
+      {title:"MEMBERSHIP", items:[["WEEKLY LITE MEMBERSHIP",150,"IMG_3090.png"],["WEEKLY MEMBERSHIP",595,"IMG_3092.png"],["MONTHLY MEMBERSHIP",2780,"IMG_3091.png"],["VIP MEMBERSHIP",3375,"IMG_3094.webp"],["VIP MAX MEMBERSHIP",10125,"IMG_3094.webp"],["S VIP MEMBERSHIP",5160,"IMG_3094.webp"],["S VIP PLUS MEMBERSHIP",5770,"IMG_3094.webp"]]},
+      {title:"DIAMOND PACK", items:[["25 💎",150,"IMG_3089.webp"],["50 💎",300,"IMG_3089.webp"],["100 💎",350,"IMG_3089.webp"],["310 💎",960,"IMG_3089.webp"],["520 💎",1730,"IMG_3089.webp"],["1060 💎",3510,"IMG_3089.webp"],["2180 💎",6590,"IMG_3089.webp"],["5600 💎",17060,"IMG_3089.webp"],["11500 💎",34090,"IMG_3089.webp"],["23000 💎",68180,"IMG_3089.webp"],["46000 💎",136360,"IMG_3089.webp"]]},
+      {title:"LEVEL UP PASS PACKAGE", items:[["LEVEL 6",150,"IMG_3101.jpeg"],["LEVEL 10",260,"IMG_3101.jpeg"],["LEVEL 15",260,"IMG_3101.jpeg"],["LEVEL 20",260,"IMG_3101.jpeg"],["LEVEL 25",260,"IMG_3101.jpeg"],["LEVEL 30",400,"IMG_3101.jpeg"]]},
+      {title:"EVO ACCESS PACKAGE", items:[["EVO ACCESS — 3 DAY",225,"IMG_3100.webp"],["EVO ACCESS — 7 DAY",295,"IMG_3100.webp"],["EVO ACCESS — 30 DAY",870,"IMG_3100.webp"]]}
+    ];
+    db.ref('prices').set(packagesData);
+  }
+  loadPackages();
+  loadAdminPanel();
+});
+}
+
+// REALTIME PRICE UPDATE
+db.ref('prices').on('value', snapshot => {
+  const data = snapshot.val();
+  if(data){
+    packagesData = data;
+    loadPackages();
+    loadAdminPanel();
+  }
+});
 
 function startCountdown(){
 updateTimerDisplay();
 setInterval(() => {
-if(totalSeconds > 0){
-totalSeconds--;
-updateTimerDisplay();
-}
+if(totalSeconds > 0){totalSeconds--; updateTimerDisplay();}
 }, 1000);
 }
 
@@ -230,17 +255,12 @@ let s = totalSeconds % 60;
 document.getElementById('hours').innerText = String(h).padStart(2,'0');
 document.getElementById('minutes').innerText = String(m).padStart(2,'0');
 document.getElementById('seconds').innerText = String(s).padStart(2,'0');
-if(totalSeconds <= 0){
-document.querySelector('.offer-title').innerText = 'OFFER ENDED';
-}
+if(totalSeconds <= 0){document.querySelector('.offer-title').innerText = 'OFFER ENDED';}
 }
 
 function verifyUID(){
 let uid = document.getElementById('uidInput').value;
-if(uid.length < 8){
-alert('Please enter valid UID');
-return;
-}
+if(uid.length < 8){alert('Please enter valid UID'); return;}
 document.getElementById('verifyBtn').innerText = 'VERIFYING...';
 document.getElementById('verifyBtn').disabled = true;
 setTimeout(() => {
@@ -264,7 +284,7 @@ verified = false;
 function loadPackages(){
 const packagesDiv = document.getElementById('packages');
 packagesDiv.innerHTML = '';
-packagesData.forEach(pkg => {
+packagesData.forEach((pkg, pkgIndex) => {
   let html = `<div class="package-section">`;
   html += `<h2 class="package-title">${pkg.title}</h2>`;
   html += `<div class="grid">`;
@@ -280,8 +300,7 @@ packagesData.forEach(pkg => {
         <span class="qty" id="qty-${id}">0</span>
         <button class="qty-btn" onclick="updateQty('${id}', '${item[0]}', ${item[1]}, 1)">+</button>
       </div>
-    </div>
-    `;
+    </div>`;
   });
   html += `</div></div>`;
   packagesDiv.innerHTML += html;
@@ -294,53 +313,75 @@ let qty = parseInt(qtyEl.innerText) + change;
 if(qty < 0) qty = 0;
 qtyEl.innerText = qty;
 let found = cart.find(i => i.id === id);
-if(found){
-found.qty = qty;
-found.total = qty * price;
-if(qty === 0) cart = cart.filter(i => i.id !== id);
-}else if(qty > 0){
-cart.push({id:id, name:name, qty:qty, price:price, total:qty * price});
-}
+if(found){found.qty = qty; found.total = qty * price; if(qty === 0) cart = cart.filter(i => i.id!== id);}
+else if(qty > 0){cart.push({id:id, name:name, qty:qty, price:price, total:qty * price});}
 updateCart();
 }
 
 function updateCart(){
-let total = 0;
-let count = 0;
-cart.forEach(item => {
-count += item.qty;
-total += item.total;
-});
+let total = 0; let count = 0;
+cart.forEach(item => {count += item.qty; total += item.total;});
 document.getElementById('cartCount').innerText = count;
 document.getElementById('cartTotal').innerText = 'Rs. ' + total;
-if(count > 0){
-document.getElementById('cartBar').classList.add('active');
-}else{
-document.getElementById('cartBar').classList.remove('active');
-}
+if(count > 0){document.getElementById('cartBar').classList.add('active');}
+else{document.getElementById('cartBar').classList.remove('active');}
 }
 
 function goToCheckout(){
-if(cart.length === 0){
-alert('Please select at least 1 item');
-return;
-}
-if(!verified){
-alert('Please verify your ID first!');
-return;
-}
+if(cart.length === 0){alert('Please select at least 1 item'); return;}
+if(!verified){alert('Please verify your ID first!'); return;}
 let uid = document.getElementById('uidInput').value;
 let ffName = document.getElementById('ffNameInput').value;
-if(ffName.trim() === ''){
-alert('Please enter your Free Fire Name');
-return;
-}
+if(ffName.trim() === ''){alert('Please enter your Free Fire Name'); return;}
 localStorage.setItem('cart', JSON.stringify(cart));
 localStorage.setItem('uid', uid);
 localStorage.setItem('playerName', ffName);
 window.location.href = 'checkout.html';
 }
 
+// ===== ADMIN FUNCTIONS =====
+function openAdmin(){document.getElementById('adminModal').classList.add('active');}
+function closeAdmin(){document.getElementById('adminModal').classList.remove('active');}
+
+function loginAdmin(){
+  let pw = document.getElementById('adminPw').value;
+  if(pw === ADMIN_PASSWORD){
+    document.getElementById('adminLogin').style.display = 'none';
+    document.getElementById('adminPanel').style.display = 'block';
+  } else {alert('Wrong Password!');}
+}
+
+function loadAdminPanel(){
+  let html = '';
+  packagesData.forEach((pkg, pIndex) => {
+    html += `<h4 style="margin-top:15px;color:#222;">${pkg.title}</h4>`;
+    pkg.items.forEach((item, iIndex) => {
+      html += `
+      <div class="admin-item">
+        <span style="font-size:12px;">${item[0]}</span>
+        <div>
+          Rs.<input type="number" id="price-${pIndex}-${iIndex}" value="${item[1]}">
+          <button onclick="updatePrice(${pIndex}, ${iIndex})">Update</button>
+        </div>
+      </div>`;
+    });
+  });
+  document.getElementById('adminPriceList').innerHTML = html;
+}
+
+function updatePrice(pIndex, iIndex){
+  let newPrice = document.getElementById(`price-${pIndex}-${iIndex}`).value;
+  packagesData[pIndex].items[iIndex][1] = Number(newPrice);
+  db.ref('prices').set(packagesData).then(() => {
+    showToast();
+  });
+}
+
+function showToast(){
+  let toast = document.getElementById('toast');
+  toast.classList.add('show');
+  setTimeout(() => {toast.classList.remove('show');}, 2000);
+}
 </script>
 </body>
 </html>
